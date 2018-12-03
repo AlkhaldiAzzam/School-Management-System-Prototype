@@ -53,7 +53,7 @@ public class HomeController implements Initializable {
             loadStage("University/Students.fxml");
             System.out.println("Dashboard");
         } else if (mouseEvent.getSource() == fac_btn) {
-            //loadStage("/home/fxml/Timetable.fxml");
+            loadStage("University/Faculty.fxml");
         }
     }
 
@@ -75,6 +75,9 @@ public class HomeController implements Initializable {
                     break;
                 case "University/Students.fxml":
                     title = "Students";
+                    break;
+                case "University/Faculty.fxml":
+                    title = "Faculty";
                     break;
                 default:
                     title = "X";
