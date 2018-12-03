@@ -20,6 +20,8 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class Login extends Application {
+    
+    /*
 
     private final static File loginFile = new File("data/login.txt");
 
@@ -43,9 +45,11 @@ public class Login extends Application {
 
     Label label;
     
+    */
     @Override
     public void start(Stage stage) throws Exception {
 
+        /*
         label = new Label("LOGIN");
         label.setStyle("-fx-text-fill: #028040; -fx-font-size:70px");
         
@@ -156,16 +160,12 @@ public class Login extends Application {
 
         stage.setScene(scene);
         stage.show();
-
+*/
     }
-/*
-    public static void main(String[] args) {
-        launch(args);
-    }
-    */
-
     
     
+    
+    /*
     private void closeStage() {
         //((Stage) label.getScene().getWindow()).close();
     }
@@ -186,5 +186,5 @@ public class Login extends Application {
         catch (Exception ex) {
         }
     }
-
+*/
 }
