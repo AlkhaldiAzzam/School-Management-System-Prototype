@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="482.0" prefWidth="507.0" style="-fx-background-color: #fff;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.LoginXController">
+   <stylesheets>
+      <URL value="@../../../SWE_Project22/src/login.css" />
+   </stylesheets>
+   <children>
+      <Pane layoutX="12.0" layoutY="18.0" prefHeight="446.0" prefWidth="486.0" style="-fx-background-color: #fff;">
+         <children>
+            <JFXTextField fx:id="userNameField" focusColor="#028040" labelFloat="true" layoutX="94.0" layoutY="196.0" prefHeight="45.0" prefWidth="300.0" promptText="Username">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="passwordField" focusColor="#028040" labelFloat="true" layoutX="94.0" layoutY="279.0" prefHeight="45.0" prefWidth="300.0" promptText="Password">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXButton buttonType="RAISED" layoutX="143.0" layoutY="380.0" onAction="#handleLoginButtonAction" prefHeight="32.0" prefWidth="91.0" ripplerFill="WHITE" style="-fx-background-color: #028040;" text="LOGIN" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="254.0" layoutY="380.0" onAction="#handleCancelButtonAction" prefHeight="32.0" prefWidth="91.0" ripplerFill="WHITE" style="-fx-background-color: #028040;" text="CLOSE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="187.0" layoutY="104.0" text="LOGIN" textFill="#028040">
+               <font>
+                  <Font name="System Italic" size="39.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="106.0" fitWidth="435.0" layoutX="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../SWE_Project22/data/img/logo-type2.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="wrong" layoutX="146.0" layoutY="342.0" text="Wrong username or password." textFill="RED">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
