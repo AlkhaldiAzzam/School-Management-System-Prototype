@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
@@ -12,20 +13,21 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="944.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="University.DBoardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="944.0" style="-fx-background-color: #333333;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="University.DBoardController">
    <children>
-      <Pane layoutY="-2.0" prefHeight="139.0" prefWidth="950.0" style="-fx-background-color: #2D75E8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="-2.0">
+      <Pane layoutY="-2.0" prefHeight="139.0" prefWidth="950.0" style="-fx-background-color: #333333;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="-2.0">
          <children>
-            <Label layoutX="73.0" layoutY="30.0" text="Dashboard" textFill="WHITE">
+            <Label layoutX="163.0" layoutY="14.0" text="Dashboard" textFill="#decd6a">
                <font>
-                  <Font size="48.0" />
+                  <Font name="Calibri Light Italic" size="72.0" />
                </font>
             </Label>
-            <Label layoutX="79.0" layoutY="91.0" text="School Mangement " textFill="WHITE">
+            <Label layoutX="166.0" layoutY="87.0" text="School Mangement " textFill="#decd6a">
                <font>
-                  <Font size="13.0" />
+                  <Font size="14.0" />
                </font>
             </Label>
+            <FontAwesomeIconView fill="#decd6a" glyphName="HOME" layoutX="28.0" layoutY="111.0" size="120" />
          </children>
       </Pane>
       <GridPane hgap="15.0" layoutX="45.0" layoutY="158.0" prefHeight="103.0" prefWidth="869.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="158.0">
@@ -39,56 +41,56 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #3A84C3; -fx-background-radius: 1em;">
+            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #027E40; -fx-background-radius: 1em;">
                <children>
                   <Label alignment="CENTER" layoutX="62.0" layoutY="65.0" text="Total Students" textFill="WHITE">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="numOfStu" alignment="CENTER" layoutX="6.0" layoutY="20.0" prefHeight="53.0" prefWidth="196.0" text="500" textFill="WHITE">
+                  <Label fx:id="numOfStu" alignment="CENTER" layoutX="6.0" layoutY="20.0" prefHeight="53.0" prefWidth="196.0" text="500" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #EEAC4C; -fx-background-radius: 1em;" GridPane.columnIndex="1">
+            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #027E40; -fx-background-radius: 1em;" GridPane.columnIndex="1">
                <children>
                   <Label layoutX="38.0" layoutY="69.0" text="Total Faculty Members" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="numOfFac" layoutX="62.0" layoutY="25.0" text="1000" textFill="WHITE">
+                  <Label fx:id="numOfFac" alignment="CENTER" layoutX="18.0" layoutY="25.0" prefHeight="53.0" prefWidth="171.0" text="1000" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #5CB55B; -fx-background-radius: 1em;" GridPane.columnIndex="2">
+            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #027E40; -fx-background-radius: 1em;" GridPane.columnIndex="2">
                <children>
                   <Label layoutX="62.0" layoutY="70.0" text="Total Lessons" textFill="WHITE">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="79.0" layoutY="25.0" text="10" textFill="WHITE">
+                  <Label alignment="CENTER" layoutY="25.0" prefHeight="53.0" prefWidth="206.0" text="10" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #D7534E; -fx-background-radius: 1em;" GridPane.columnIndex="3">
+            <Pane prefHeight="103.0" prefWidth="200.0" style="-fx-background-color: #027E40; -fx-background-radius: 1em;" GridPane.columnIndex="3">
                <children>
                   <Label layoutX="57.0" layoutY="70.0" text="Missed Classes" textFill="WHITE">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="90.0" layoutY="25.0" text="2" textFill="WHITE">
+                  <Label alignment="CENTER" layoutX="90.0" layoutY="25.0" text="2" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>

@@ -17,10 +17,9 @@ import javafx.stage.Stage;
 public class Main {
 
     public void start(Stage stage) throws Exception {
-        
+
         University.readStudents();
         University.readFaculty();
-        
 
         URL url = new File("src/home.fxml").toURL();
         Parent root = FXMLLoader.load(url);
@@ -29,7 +28,8 @@ public class Main {
 
         stage.setScene(scene);
         stage.show();
-        stage.setTitle("Ingenious Education Login");
+        //stage.setTitle("Ingenious Education Login");
+        stage.setTitle("Home");
 
     }
 

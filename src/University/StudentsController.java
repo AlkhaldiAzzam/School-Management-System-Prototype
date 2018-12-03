@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package University;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -23,25 +25,28 @@ import javafx.stage.Stage;
  *
  * @author a_3bd
  */
-public class HomeController implements Initializable {
+public class StudentsController implements Initializable {
+
+    
     
     @FXML
     private Button db_btn;
-    
+
     @FXML
     private Button stu_btn;
-    
+
     @FXML
     private Button fac_btn;
-    
+
     @FXML
     private Button cur_btn;
-    
+
     @FXML
     private Button sec_btn;
-    
+
     @FXML
     private Button set_btn;
+
     
     @FXML
     private void handleButtonClicks(javafx.event.ActionEvent mouseEvent) {
@@ -50,43 +55,31 @@ public class HomeController implements Initializable {
             System.out.println("Dashboard");
         } else if (mouseEvent.getSource() == stu_btn) {
             //loadStage("/home/fxml/Students.fxml");
-            loadStage("University/Students.fxml");
+            loadStage("University/DBoard.fxml");
             System.out.println("Dashboard");
         } else if (mouseEvent.getSource() == fac_btn) {
             //loadStage("/home/fxml/Timetable.fxml");
         }
-    }
-
+}
+    
+    
     //
+    
     private void loadStage(String fxml) {
         try {
             
-            URL url = new File("src/" + fxml).toURL();
-            Parent root = FXMLLoader.load(url);
+        URL url = new File("src/"+ fxml).toURL();
+        Parent root = FXMLLoader.load(url);
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.initModality(Modality.APPLICATION_MODAL);
-            
-            String title;
-            
-            switch (fxml) {
-                case "University/DBoard.fxml":
-                    title = "Dashboard";
-                    break;
-                case "University/Students.fxml":
-                    title = "Students";
-                    break;
-                default:
-                    title = "X";
-            }
-            stage.setTitle(title);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+}
     //
-
+    
     /**
      * Initializes the controller class.
      */
@@ -94,5 +87,8 @@ public class HomeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+
+
     
 }

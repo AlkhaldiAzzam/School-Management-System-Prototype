@@ -24,7 +24,7 @@ public class controller extends Application {
 
         stage.setScene(scene);
         stage.show();
-        stage.setTitle("Ingenious Education Login");
+        stage.setTitle("Login");
         
         
         //Login.Login ll = new Login.Login();

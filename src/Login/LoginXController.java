@@ -25,10 +25,9 @@ import javafx.stage.StageStyle;
  */
 public class LoginXController implements Initializable {
 
-    
     @FXML
     private Label wrong;
-    
+
     @FXML
     private JFXTextField userNameField;
 
@@ -37,42 +36,33 @@ public class LoginXController implements Initializable {
 
     @FXML
     void handleCancelButtonAction(ActionEvent event) {
-        
+
     }
 
     @FXML
     void handleLoginButtonAction(ActionEvent event) {
 
-        
-            
-            String name = userNameField.getText();
-            String pass = passwordField.getText();
-            
-            try {
-                if( loginValidation(name, pass) ) {
-                    wrong.setVisible(false);
-                    System.out.println("Logged In . . .");
-                    closeStage();
-                    loadMain();
-                    
-                }
-                                        
-                else
-                    wrong.setVisible(true);
-            } catch (Exception ex) {
+        String name = userNameField.getText();
+        String pass = passwordField.getText();
 
+        try {
+            if (loginValidation(name, pass)) {
+                wrong.setVisible(false);
+                System.out.println("Logged In . . .");
+                closeStage();
+                loadMain();
+
+            } else {
+                wrong.setVisible(true);
             }
-            
-            
-        
+        } catch (Exception ex) {
+
+        }
+
     }
 
-    
-    
-    
     ////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////
-    
     private final static File loginFile = new File("data/login.txt");
 
     public static boolean loginValidation(String name, String pass) throws Exception {
@@ -92,11 +82,8 @@ public class LoginXController implements Initializable {
 
         return false;
     }
-    
-    
+
     /////////////////////
-    
-    
     private void closeStage() {
         ((Stage) wrong.getScene().getWindow()).close();
     }
@@ -105,29 +92,27 @@ public class LoginXController implements Initializable {
         try {
             //Parent parent = FXMLLoader.load(getClass().getResource("/library/assistant/ui/main/main.fxml"));
             Main.Main m = new Main.Main();
-            
-            
-            Stage stage = new Stage(StageStyle.DECORATED);
-            stage.setTitle("Ingenious Education");
-            
-                        m.start(stage);
 
-            
-        }
-        catch (Exception ex) {
+            Stage stage = new Stage(StageStyle.DECORATED);
+            //stage.setTitle("Ingenious Education");
+            //stage.setTitle("Home");
+
+            m.start(stage);
+
+        } catch (Exception ex) {
         }
     }
     ////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////
-    
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
+
         wrong.setVisible(false);
-    }    
-    
+    }
+
 }
