@@ -167,7 +167,7 @@ public class Login extends Application {
     
     
     private void closeStage() {
-        ((Stage) label.getScene().getWindow()).close();
+        //((Stage) label.getScene().getWindow()).close();
     }
 
     void loadMain() {
