@@ -22,20 +22,6 @@
          </children></Pane>
       <Pane layoutX="10.0" layoutY="175.0" prefHeight="470.0" prefWidth="830.0" style="-fx-background-color: #333333;">
          <children>
-            <Button fx:id="stu_btn" contentDisplay="TOP" layoutX="337.0" layoutY="58.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Students" textFill="#027e40">
-               <graphic>
-                  <FontAwesomeIconView fill="#027e40" glyphName="USERS" size="75" />
-               </graphic>
-               <font>
-                  <Font size="18.0" />
-               </font></Button>
-            <Button fx:id="fac_btn" contentDisplay="TOP" layoutX="609.0" layoutY="58.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Faculty" textFill="#027e40">
-               <graphic>
-                  <FontAwesomeIconView fill="#027e40" glyphName="USER" size="75" />
-               </graphic>
-               <font>
-                  <Font size="18.0" />
-               </font></Button>
             <Button fx:id="cur_btn" contentDisplay="TOP" layoutX="71.0" layoutY="262.0" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Courses" textFill="#027e40">
                <graphic>
                   <MaterialDesignIconView fill="#027e40" glyphName="BOOK" size="75" />
@@ -63,6 +49,28 @@
                </font>
                <graphic>
                   <FontAwesomeIconView fill="#027e40" glyphName="HOME" size="75" />
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXButton>
+            <JFXButton fx:id="stu_btn" contentDisplay="TOP" layoutX="340.0" layoutY="58.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleButtonClicks" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Students" textFill="#027e40">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#027e40" glyphName="USERS" size="75" />
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXButton>
+            <JFXButton fx:id="fac_btn" contentDisplay="TOP" layoutX="609.0" layoutY="58.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleButtonClicks" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Faculty" textFill="#027e40">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#027e40" glyphName="USER" size="75" />
                </graphic>
                <opaqueInsets>
                   <Insets />

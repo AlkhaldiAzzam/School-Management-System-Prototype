@@ -18,8 +18,8 @@ public class Main {
 
     public void start(Stage stage) throws Exception {
 
-        University.readStudents();
-        University.readFaculty();
+                University.readFaculty();
+                University.readStudents();
 
         URL url = new File("src/home.fxml").toURL();
         Parent root = FXMLLoader.load(url);

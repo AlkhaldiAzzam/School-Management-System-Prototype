@@ -5,6 +5,7 @@
  */
 package Login;
 
+import University.University;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.io.File;
@@ -13,7 +14,10 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -91,14 +95,29 @@ public class LoginXController implements Initializable {
     void loadMain() {
         try {
             //Parent parent = FXMLLoader.load(getClass().getResource("/library/assistant/ui/main/main.fxml"));
+            
+            /*
             Main.Main m = new Main.Main();
-
             Stage stage = new Stage(StageStyle.DECORATED);
+                        m.start(stage);
+
+            */
+            
             //stage.setTitle("Ingenious Education");
             //stage.setTitle("Home");
 
-            m.start(stage);
+            
+         Stage stage = new Stage();   
+        URL url = new File("src/home.fxml").toURL();
+        Parent root = FXMLLoader.load(url);
 
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.setTitle("Home");
+        stage.show();
+
+        
         } catch (Exception ex) {
         }
     }

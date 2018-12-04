@@ -4,10 +4,13 @@
  * and open the template in the editor.
  */
 
+import University.University;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
@@ -95,7 +98,12 @@ public class HomeController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
+        try {
+            University.readFaculty();
+            University.readStudents();
+        } catch (Exception ex) {
+        }
     }    
     
 }

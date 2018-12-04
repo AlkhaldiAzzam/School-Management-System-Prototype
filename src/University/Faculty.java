@@ -71,6 +71,10 @@ public class Faculty {
     }
 
     
+    public String getID() {
+        return this.id;
+    }
+    
     public String toString () {
         return ("Name: " + title + ". " + firstName + " " + middleName + " " + lastName + ", ID: " + id + ", Department: " + department);
     }
