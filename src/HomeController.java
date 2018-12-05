@@ -100,9 +100,11 @@ public class HomeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         try {
+            University.readSections();
             University.readFaculty();
             University.readStudents();
         } catch (Exception ex) {
+            System.out.println("Error in " + getClass().getName());
         }
     }    
     

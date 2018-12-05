@@ -43,17 +43,28 @@ public class AddStudentWindowController implements Initializable {
     @FXML
     void addAction(ActionEvent event) {
 
+        
         if (fullNameField.getText().isEmpty() || yearField.getText().isEmpty()) {
             msgLabel.setVisible(true);
         } else {
             msgLabel.setVisible(false);
 
-            // Student s = new Student (fullName.getText(), year.getText());
             if (!majorField.getText().isEmpty()) {
+                             Student s = new Student (fullNameField.getText(), Integer.parseInt( yearField.getText()) , majorField.getText());
+
                 //s.setMajor(majorField.getText());
+            } else {
+                             Student s = new Student (fullNameField.getText(), Integer.parseInt( yearField.getText()) , "undecided");
             }
             ((Stage) msgLabel.getScene().getWindow()).close();
 
+        }
+        
+        try {
+        University.readStudents();
+        }
+        catch (Exception e) {
+            
         }
     }
 

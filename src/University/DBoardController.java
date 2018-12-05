@@ -23,6 +23,9 @@ public class DBoardController implements Initializable {
 
     @FXML
     private Label numOfFac;
+    
+    @FXML
+    private Label numOfSec;
 
     /**
      * Initializes the controller class.
@@ -35,6 +38,8 @@ public class DBoardController implements Initializable {
         numOfStu.setText(University.students.size() + "");
         //numOfFac.setText(University.number_Of_Faculty + "");
         numOfFac.setText(University.faculty.size() + "");
+        
+        numOfSec.setText(University.sections.size() + "");
 
     }
 

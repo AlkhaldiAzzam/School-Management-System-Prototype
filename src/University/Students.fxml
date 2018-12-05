@@ -5,7 +5,6 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -34,7 +33,7 @@
             <FontAwesomeIconView fill="#decd6a" glyphName="USERS" layoutX="28.0" layoutY="104.0" size="100" />
          </children>
       </Pane>
-      <SplitPane dividerPositions="0.6874279123414071" layoutX="42.0" layoutY="299.0" prefHeight="287.0" prefWidth="869.0" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="299.0">
+      <SplitPane layoutX="42.0" layoutY="299.0" prefHeight="287.0" prefWidth="869.0" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="299.0">
         <items>
             <GridPane>
                <columnConstraints>
@@ -44,27 +43,16 @@
                   <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TableView fx:id="tbData" prefHeight="349.0" prefWidth="1066.0" stylesheets="@../css/fullpackstyling.css">
+                  <TableView fx:id="stuTable" prefHeight="349.0" prefWidth="1066.0" stylesheets="@../css/fullpackstyling.css">
                      <columns>
-                        <TableColumn fx:id="studentId" prefWidth="75.0" text="StudentId" />
-                        <TableColumn fx:id="firstName" prefWidth="75.0" text="First Name" />
-                        <TableColumn fx:id="lastName" prefWidth="75.0" text="Last Name" />
+                        <TableColumn fx:id="name" maxWidth="4000.0" minWidth="50.0" prefWidth="319.0" text="Name" />
+                        <TableColumn fx:id="major" maxWidth="1000.0" minWidth="0.0" prefWidth="92.0" text="Major" />
+                        <TableColumn fx:id="id" maxWidth="2500.0" minWidth="15.0" prefWidth="189.0" text="ID Number" />
+                        <TableColumn fx:id="advisorName" maxWidth="3000.0" minWidth="30.0" prefWidth="259.0" text="Academic Advisor" />
                      </columns>
                      <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-               </children>
-            </GridPane>
-            <GridPane>
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <PieChart fx:id="pieChart" prefHeight="287.0" prefWidth="278.0" style="-fx-background-color: #fff;"  />
                </children>
             </GridPane>
         </items>
@@ -86,6 +74,14 @@
                </font>
                <graphic>
                   <MaterialDesignIconView fill="WHITE" glyphName="PLUS" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" contentDisplay="CENTER" layoutX="193.0" layoutY="98.0" onAction="#refreshAction" prefHeight="49.0" prefWidth="52.0" style="-fx-background-color: #027E40;" text=" " textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="30" />
                </graphic>
             </JFXButton>
          </children>
