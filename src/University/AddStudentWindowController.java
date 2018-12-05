@@ -21,6 +21,7 @@ import javafx.stage.Stage;
  */
 public class AddStudentWindowController implements Initializable {
 
+    public static boolean added = false;
     //
     @FXML
     private ResourceBundle resources;
@@ -43,28 +44,24 @@ public class AddStudentWindowController implements Initializable {
     @FXML
     void addAction(ActionEvent event) {
 
-        
+        added = false;
         if (fullNameField.getText().isEmpty() || yearField.getText().isEmpty()) {
             msgLabel.setVisible(true);
         } else {
             msgLabel.setVisible(false);
 
             if (!majorField.getText().isEmpty()) {
-                             Student s = new Student (fullNameField.getText(), Integer.parseInt( yearField.getText()) , majorField.getText());
-
-                //s.setMajor(majorField.getText());
+                Student s = new Student(fullNameField.getText(), Integer.parseInt(yearField.getText()), majorField.getText());
+                added = true;
             } else {
-                             Student s = new Student (fullNameField.getText(), Integer.parseInt( yearField.getText()) , "undecided");
+                Student s = new Student(fullNameField.getText(), Integer.parseInt(yearField.getText()), "undecided");
+                added = true;
             }
             ((Stage) msgLabel.getScene().getWindow()).close();
-
         }
-        
         try {
-        University.readStudents();
-        }
-        catch (Exception e) {
-            
+            University.readStudents();
+        } catch (Exception e) {
         }
     }
 

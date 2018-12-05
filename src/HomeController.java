@@ -18,6 +18,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -86,6 +87,7 @@ public class HomeController implements Initializable {
                     title = "X";
             }
             stage.setTitle(title);
+                    stage.getIcons().add(new Image ("file:data/img/icon.png"));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

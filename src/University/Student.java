@@ -87,6 +87,8 @@ public class Student {
         this.major = major;
         classes = new ArrayList<>();
 
+        University.students.add(this);
+        University.number_Of_Students++;
         writeToFile();
         
         } catch (Exception e) {
@@ -188,7 +190,7 @@ public class Student {
         advisorName = n;
     }
 
-    public String getAdvisorName() {
-        return this.advisor.name;
+    public boolean equals (Student s) {
+        return ( this.id == (s.id));
     }
 }

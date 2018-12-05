@@ -110,5 +110,9 @@ public class Section {
     public String toString() {
         return String.format("%7s-%02d\t%7s\t%7s", courseName, number, location, status);
     }
+    
+    public boolean equals (Section s) {
+        return ( this.CRN.equals(s.CRN));
+    }
 
 }

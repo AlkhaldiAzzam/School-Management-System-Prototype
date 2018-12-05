@@ -34,12 +34,13 @@ public class DBoardController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
 
-        //numOfStu.setText(University.number_Of_Students + "");
-        numOfStu.setText(University.students.size() + "");
-        //numOfFac.setText(University.number_Of_Faculty + "");
-        numOfFac.setText(University.faculty.size() + "");
+        numOfStu.setText(University.number_Of_Students + "");
+        //numOfStu.setText(University.students.size() + "");
+        numOfFac.setText(University.number_Of_Faculty + "");
+        //numOfFac.setText(University.faculty.size() + "");
         
-        numOfSec.setText(University.sections.size() + "");
+        numOfSec.setText(University.number_Of_Sections + "");
+        //numOfSec.setText(University.sections.size() + "");
 
     }
 

@@ -23,6 +23,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
@@ -68,25 +69,38 @@ public class StudentsController implements Initializable {
             //dialogVbox.getChildren().add(new Text("This is a Dialog"));
             //Scene dialogScene = new Scene(dialogVbox, 300, 200);
             dialog.setScene(new Scene(root));
+        dialog.getIcons().add(new Image ("file:data/img/icon.png"));
             dialog.show();
+            
         } catch (Exception e) {
 
         }
 
     }
-    
-    
-    
+
     @FXML
     void refreshAction(ActionEvent event) {
 
         try {
-            
-                    //stuTable.getItems().clear();
-                    //stuTable.refresh();
-                    stuTable.setItems(getStudents());
-                    
 
+                    //stuTable.getItems().clear();
+            //stuTable.refresh();
+            //stuTable.setItems(getStudents());
+            
+            if (AddStudentWindowController.added) {
+                stuTable.getItems().add( University.students.get(University.students.size() - 1));
+            }
+            
+            /*
+            for (Student ss : getStudents()) {
+
+                if (stuTable.getItems().contains(ss)) {
+                    stuTable.getItems().remove(ss);
+                }
+
+            }
+            stuTable.getItems().addAll(getStudents());
+*/
         } catch (Exception e) {
 
         }
@@ -117,17 +131,17 @@ public class StudentsController implements Initializable {
         ObservableList<Student> s = FXCollections.observableArrayList();
 
         for (Student stu : University.students) {
-            
-            if (! stuTable.getItems().contains(stu)) {
-            s.add(stu);
+
+            if (!stuTable.getItems().contains(stu)) {
+                s.add(stu);
             }
         }
 
         return s;
     }
-    
-    public void update () {
-                //stuTable.setItems(getStudents());
+
+    public void update() {
+        //stuTable.setItems(getStudents());
 
     }
 

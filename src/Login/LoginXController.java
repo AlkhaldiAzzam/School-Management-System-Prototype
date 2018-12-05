@@ -19,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -115,6 +116,7 @@ public class LoginXController implements Initializable {
 
         stage.setScene(scene);
         stage.setTitle("Home");
+        stage.getIcons().add(new Image ("file:data/img/icon.png"));
         stage.show();
 
         

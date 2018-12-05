@@ -22,6 +22,7 @@ public class University {
     private final static File facultyFile = new File("data/faculty.txt");
 
     public static void readSections() throws Exception {
+        number_Of_Sections = 0;
         Scanner fscn = new Scanner(sectionsFile);
 
         while (fscn.hasNextLine()) {
@@ -42,6 +43,8 @@ public class University {
     }
 
     public static void readStudents() throws Exception {
+        students.clear();
+        number_Of_Students = 0;
         Scanner fscn = new Scanner(studentsFile);
 
         while (fscn.hasNextLine()) {
@@ -89,6 +92,8 @@ public class University {
     }
 
     public static void readFaculty() throws Exception {
+        faculty.clear();
+        number_Of_Faculty = 0;
         Scanner fscn = new Scanner(facultyFile);
 
         while (fscn.hasNextLine()) {

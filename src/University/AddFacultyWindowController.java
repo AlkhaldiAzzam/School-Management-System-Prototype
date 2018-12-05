@@ -21,6 +21,7 @@ import javafx.stage.Stage;
  */
 public class AddFacultyWindowController implements Initializable {
 
+    public static boolean added = false;
     
     @FXML
     private ResourceBundle resources;
@@ -44,18 +45,51 @@ public class AddFacultyWindowController implements Initializable {
     @FXML
     void addAction(ActionEvent event) {
 
+        added = false;
         if (fullNameField.getText().isEmpty() || userIDField.getText().isEmpty() || departmentField.getText().isEmpty()) {
             msgLabel.setVisible(true);
         } else {
             msgLabel.setVisible(false);
 
-            // Faculty f = new Faculty (fullNameField.getText(), userIDField.getText(), departmentField.getText());
-            
+
+                Faculty f = new Faculty(fullNameField.getText(), userIDField.getText(), departmentField.getText());
+                added = true;
+                      
             ((Stage) msgLabel.getScene().getWindow()).close();
 
+        try {
+            University.readFaculty();
+        } catch (Exception e) {
+        }
         }
     }
 
+    /*
+    @FXML
+    void addAction(ActionEvent event) {
+
+        added = false;
+        if (fullNameField.getText().isEmpty() || yearField.getText().isEmpty()) {
+            msgLabel.setVisible(true);
+        } else {
+            msgLabel.setVisible(false);
+
+            if (!majorField.getText().isEmpty()) {
+                Student s = new Student(fullNameField.getText(), Integer.parseInt(yearField.getText()), majorField.getText());
+                added = true;
+            } else {
+                Student s = new Student(fullNameField.getText(), Integer.parseInt(yearField.getText()), "undecided");
+                added = true;
+            }
+            ((Stage) msgLabel.getScene().getWindow()).close();
+        }
+        try {
+            University.readStudents();
+        } catch (Exception e) {
+        }
+    }
+    */
+    
     @FXML
     void cancelAction(ActionEvent event) {
 
