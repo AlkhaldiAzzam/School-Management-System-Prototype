@@ -55,6 +55,8 @@ public class StudentsController implements Initializable {
     @FXML
     private JFXTextField searchField;
 
+    
+
     @FXML
     void addAction(ActionEvent event) {
 
@@ -69,9 +71,9 @@ public class StudentsController implements Initializable {
             //dialogVbox.getChildren().add(new Text("This is a Dialog"));
             //Scene dialogScene = new Scene(dialogVbox, 300, 200);
             dialog.setScene(new Scene(root));
-        dialog.getIcons().add(new Image ("file:data/img/icon.png"));
+            dialog.getIcons().add(new Image("file:data/img/icon.png"));
             dialog.show();
-            
+
         } catch (Exception e) {
 
         }
@@ -86,21 +88,20 @@ public class StudentsController implements Initializable {
                     //stuTable.getItems().clear();
             //stuTable.refresh();
             //stuTable.setItems(getStudents());
-            
             if (AddStudentWindowController.added) {
-                stuTable.getItems().add( University.students.get(University.students.size() - 1));
+                stuTable.getItems().add(University.students.get(University.students.size() - 1));
             }
-            
+
             /*
-            for (Student ss : getStudents()) {
+             for (Student ss : getStudents()) {
 
-                if (stuTable.getItems().contains(ss)) {
-                    stuTable.getItems().remove(ss);
-                }
+             if (stuTable.getItems().contains(ss)) {
+             stuTable.getItems().remove(ss);
+             }
 
-            }
-            stuTable.getItems().addAll(getStudents());
-*/
+             }
+             stuTable.getItems().addAll(getStudents());
+             */
         } catch (Exception e) {
 
         }
@@ -119,7 +120,7 @@ public class StudentsController implements Initializable {
         name.setCellValueFactory(new PropertyValueFactory<>("fullName"));
         major.setCellValueFactory(new PropertyValueFactory<>("major"));
         id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        //advisorName.setCellValueFactory(new PropertyValueFactory<>("advisorName"));
+        advisorName.setCellValueFactory(new PropertyValueFactory<>("advisorId"));
 
         // load data
         stuTable.setItems(getStudents());

@@ -5,6 +5,7 @@
  */
 package University;
 
+import static University.University.number_Of_Courses;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -26,7 +27,12 @@ public class DBoardController implements Initializable {
     
     @FXML
     private Label numOfSec;
+    
+    @FXML
+    private Label numOfCourses;
 
+    
+    
     /**
      * Initializes the controller class.
      */
@@ -39,8 +45,11 @@ public class DBoardController implements Initializable {
         numOfFac.setText(University.number_Of_Faculty + "");
         //numOfFac.setText(University.faculty.size() + "");
         
+        //numOfSec.setText(00 + "");
         numOfSec.setText(University.number_Of_Sections + "");
         //numOfSec.setText(University.sections.size() + "");
+        
+        numOfCourses.setText( University.number_Of_Courses + "");
 
     }
 

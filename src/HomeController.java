@@ -58,6 +58,8 @@ public class HomeController implements Initializable {
             System.out.println("Dashboard");
         } else if (mouseEvent.getSource() == fac_btn) {
             loadStage("University/Faculty.fxml");
+        } else if (mouseEvent.getSource() == sec_btn) {
+            loadStage("University/Sections.fxml");
         }
     }
 
@@ -83,6 +85,9 @@ public class HomeController implements Initializable {
                 case "University/Faculty.fxml":
                     title = "Faculty";
                     break;
+                case "University/Sections.fxml":
+                    title = "Sections";
+                    break;
                 default:
                     title = "X";
             }
@@ -100,13 +105,16 @@ public class HomeController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+            
         try {
+            University.readCourses();
             University.readSections();
             University.readFaculty();
             University.readStudents();
+            
         } catch (Exception ex) {
             System.out.println("Error in " + getClass().getName());
+            System.out.println(ex.getMessage());
         }
     }    
     

@@ -111,6 +111,10 @@ public class Faculty {
     public String getFullName() {
         return title + ". " + firstName + " " + middleName + " " + lastName;
     }
+    
+    public String getSimpleName() {
+        return firstName  + " " + lastName;
+    }
 
     public String getDepartment() {
         return department;

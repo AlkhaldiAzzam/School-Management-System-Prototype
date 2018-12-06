@@ -8,21 +8,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="University.AddFacultyWindowController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="University.AddSectionWindowController">
    <children>
       <Pane prefHeight="400.0" prefWidth="542.0" style="-fx-background-color: #333333;">
          <children>
-            <JFXTextField fx:id="fullNameField" focusColor="#027e40" labelFloat="true" layoutX="92.0" layoutY="123.0" prefHeight="50.0" prefWidth="358.0" promptText="Full Name" style="-fx-background-color: #3d3d3d; -fx-text-fill: white;" unFocusColor="#e0e1dd">
+            <JFXTextField fx:id="courseNameField" focusColor="#027e40" labelFloat="true" layoutX="92.0" layoutY="123.0" prefHeight="50.0" prefWidth="358.0" promptText="Course Name" style="-fx-background-color: #3d3d3d; -fx-text-fill: white;" unFocusColor="#e0e1dd">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="userIDField" focusColor="#027e40" labelFloat="true" layoutX="92.0" layoutY="207.0" prefHeight="50.0" prefWidth="150.0" promptText="User ID" style="-fx-background-color: #3d3d3d; -fx-text-fill: white;" unFocusColor="#e0e1dd">
+            <JFXTextField fx:id="locationField" focusColor="#027e40" labelFloat="true" layoutX="92.0" layoutY="207.0" prefHeight="50.0" prefWidth="150.0" promptText="Location" style="-fx-background-color: #3d3d3d; -fx-text-fill: white;" unFocusColor="#e0e1dd">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="departmentField" focusColor="#027e40" labelFloat="true" layoutX="300.0" layoutY="207.0" prefHeight="50.0" prefWidth="150.0" promptText="Department" style="-fx-background-color: #3d3d3d; -fx-text-fill: white;" unFocusColor="#e0e1dd">
+            <JFXTextField fx:id="maxNumberField" focusColor="#027e40" labelFloat="true" layoutX="300.0" layoutY="207.0" prefHeight="50.0" prefWidth="150.0" promptText="Max. Number" style="-fx-background-color: #3d3d3d; -fx-text-fill: white;" unFocusColor="#e0e1dd">
                <font>
                   <Font size="18.0" />
                </font>
@@ -32,7 +32,7 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="91.0" layoutY="26.0" text="Add a Faculty" textFill="#decd6a">
+            <Label layoutX="91.0" layoutY="26.0" text="Add a Section" textFill="#decd6a">
                <font>
                   <Font name="Calibri Italic" size="48.0" />
                </font>

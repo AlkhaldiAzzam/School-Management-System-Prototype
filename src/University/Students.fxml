@@ -25,7 +25,7 @@
                   <Font name="Calibri Light Italic" size="72.0" />
                </font>
             </Label>
-            <Label layoutX="166.0" layoutY="87.0" text="School Mangement " textFill="#decd6a">
+            <Label layoutX="166.0" layoutY="87.0" text="KFUPM Registration System" textFill="#decd6a">
                <font>
                   <Font size="14.0" />
                </font>
@@ -43,7 +43,7 @@
                   <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TableView fx:id="stuTable" prefHeight="349.0" prefWidth="1066.0" stylesheets="@../css/fullpackstyling.css">
+                  <TableView fx:id="stuTable" prefHeight="349.0" prefWidth="1066.0">
                      <columns>
                         <TableColumn fx:id="name" maxWidth="4000.0" minWidth="50.0" prefWidth="319.0" text="Name" />
                         <TableColumn fx:id="major" maxWidth="1000.0" minWidth="0.0" prefWidth="92.0" text="Major" />
@@ -76,12 +76,28 @@
                   <MaterialDesignIconView fill="WHITE" glyphName="PLUS" size="30" />
                </graphic>
             </JFXButton>
-            <JFXButton buttonType="RAISED" contentDisplay="CENTER" layoutX="193.0" layoutY="98.0" onAction="#refreshAction" prefHeight="49.0" prefWidth="52.0" style="-fx-background-color: #027E40;" text=" " textFill="WHITE">
+            <JFXButton buttonType="RAISED" contentDisplay="CENTER" layoutX="193.0" layoutY="98.0" maxWidth="54.0" minWidth="54.0" onAction="#refreshAction" prefHeight="49.0" prefWidth="52.0" style="-fx-background-color: #027E40;" text=" " textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" contentDisplay="CENTER" layoutX="260.0" layoutY="98.0" maxWidth="54.0" minWidth="54.0" prefHeight="49.0" prefWidth="52.0" style="-fx-background-color: #027E40;" text=" " textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="EDIT" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" contentDisplay="CENTER" layoutX="326.0" layoutY="98.0" maxWidth="54.0" minWidth="54.0" prefHeight="49.0" prefWidth="52.0" style="-fx-background-color: #027E40;" text=" " textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="30" />
                </graphic>
             </JFXButton>
          </children>

@@ -17,32 +17,60 @@ public class University {
     static ArrayList<Section> sections = new ArrayList<>();
     static ArrayList<Course> courses = new ArrayList<>();
 
+    private final static File coursesFile = new File("data/courses.txt");
     private final static File sectionsFile = new File("data/sections.txt");
     private final static File studentsFile = new File("data/students.txt");
     private final static File facultyFile = new File("data/faculty.txt");
 
-    public static void readSections() throws Exception {
-        number_Of_Sections = 0;
-        Scanner fscn = new Scanner(sectionsFile);
+    public static void readCourses() {
 
-        while (fscn.hasNextLine()) {
+        try {
 
-            int number = Integer.parseInt(fscn.nextLine());
-            String courseName = fscn.nextLine();
-            String CRN = fscn.nextLine();
-            String instructorID = fscn.nextLine();
-            String location = fscn.nextLine();
-            int maxNumber = Integer.parseInt(fscn.nextLine());
+            courses.clear();
+            number_Of_Courses = 0;
+            Scanner fscn = new Scanner(coursesFile);
 
-            Section sec = new Section(number, courseName, CRN, instructorID, location, maxNumber);
+            while (fscn.hasNextLine()) {
+                String name = (fscn.nextLine());
 
-            sections.add(sec);
-            number_Of_Sections++;
+                Course c = new Course(name);
+                courses.add(c);
+                number_Of_Courses++;
+            }
+            fscn.close();
+        } catch (Exception e) {
+            System.out.println("Exception in " + "Univsity class - read Courses method.");
         }
-        fscn.close();
     }
 
-    public static void readStudents() throws Exception {
+    public static void readSections() {
+        try {
+            sections.clear();
+            number_Of_Sections = 0;
+            Scanner fscn = new Scanner(sectionsFile);
+
+            while (fscn.hasNextLine()) {
+                int number = Integer.parseInt(fscn.nextLine());
+                String courseName = fscn.nextLine();
+                String CRN = fscn.nextLine();
+                String instructorID = fscn.nextLine();
+                String location = fscn.nextLine();
+                int maxNumber = Integer.parseInt(fscn.nextLine());
+                String status = fscn.nextLine();
+                //
+                Section sec = new Section(number, courseName, CRN, instructorID, location, maxNumber, status);
+                sections.add(sec);
+                number_Of_Sections++;
+            }
+            fscn.close();
+        } catch (Exception e) {
+            System.out.println("Exception at readSections() method - at Uni. Class." + "\n" + e.getMessage());
+        }
+    }
+
+    public static void readStudents() {
+        
+        try {
         students.clear();
         number_Of_Students = 0;
         Scanner fscn = new Scanner(studentsFile);
@@ -55,6 +83,7 @@ public class University {
             String advID = (fscn.nextLine());
             String sections = new String(fscn.nextLine()); // CRN's
 
+            /*
             Faculty f = null;
 
             for (Faculty x : faculty) {
@@ -64,19 +93,23 @@ public class University {
             }
 
             Student s = new Student(name, ID, major, f);
-
-            students.add(s);
+                    */
+            
             number_Of_Students++;
+            Student s = new Student(name, ID, major, advID);
+            students.add(s);
         }
         fscn.close();
+        } catch (Exception e) {
+            System.out.println("Exception at readStudents - Uni. Class.");
+        }
     }
 
     private static ArrayList<Section> readCRN(String CRNs) {
 
         ArrayList<Section> classes = new ArrayList<>();
-        ;
-        try {
 
+        try {
             ArrayList<String> CRNsList = (ArrayList<String>) Arrays.asList(CRNs.split(","));
 
             for (Section s : sections) {
@@ -112,4 +145,50 @@ public class University {
         fscn.close();
     }
 
+    
+    
+    
+    ////////////////////////////////////////////////////////////////////////////
+    
+    public static Course getCourse (String name) {
+        
+        
+        return null;
+    }
+    
+    
+    public static Section getSection (String CRN) {
+        
+        for (Section sec : sections) {
+            if (sec.getCRN().equals(CRN))
+                return sec;
+        }
+        
+        return null;
+    }
+    
+    
+    public static Faculty getFaculty (String id) {
+        
+        for (Faculty fac : faculty) {
+            if (fac.getID().equals(id))
+                return fac;
+        }
+        
+        return null;
+    }
+    
+    public static Student getStudent (String id) {
+        
+        for (Student stu : students) {
+            if (stu.getId().equals(id))
+                return stu;
+        }
+        
+        return null;
+    }
+    
+    
+    
+    
 }

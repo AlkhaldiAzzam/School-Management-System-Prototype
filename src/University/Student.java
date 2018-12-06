@@ -9,29 +9,31 @@ public class Student {
 
     private static ArrayList<Long> idList = new ArrayList<>();
 
-    String fullName;
+    
+    
     String advisorName;
+    String advisorId;
+    private Faculty advisor;
 
+    //
+    
+    String fullName;
     String firstName;
     String middleName;
     String lastName;
     private int year; // needed when adding
     private long id;
-    //final private long id;
     String major;
 
     private ArrayList<Section> classes = new ArrayList<>(10);
     //index 0 for 7 am class ..... index 9 for 4:10 class
 
-    private Faculty advisor;
     private final static File studentsFile = new File("data/students.txt");
 
-    public Student(String name, long ID, String major, Faculty advisor) { // Read From File.
+    public Student(String name, long ID, String major, String advisorId) { // Read From File.
+    //public Student(String name, long ID, String major, Faculty advisor) { // Read From File.
 
-        if (idList.contains(ID)) {
-            //throw exception (duplicated id)
-        }
-
+try {
         name = name.trim();
         int startSpace = name.indexOf(" ");
         int endSpace = name.lastIndexOf(" ");
@@ -45,24 +47,21 @@ public class Student {
         }
 
         id = ID;
+        idList.add(ID);
+        
         this.major = major;
-        this.advisor = advisor;
+        //this.advisor = advisor;
+        
+        this.advisorId = advisorId;
+        
+        this.advisor = University.getFaculty(advisorId);
 
-        //this.setAdvisorName(advisor.toString());
-        //advisorName = advisor.name;
+        //this.advisorName = University.getFaculty(advisorId).getSimpleName();
+} catch (Exception e) {
+    System.out.println("Exception at Student constructor.");
+}
     }
     
-    public Student (Student other) { // Copy Constructor.
-        
-        this.firstName = other.firstName;
-        this.middleName = other.middleName;
-        lastName = other.lastName;
-        id = other.id;
-        major = other.major;
-        advisor = other.advisor;
-        
-        
-    }
 
     public Student(String name, int year, String major)  { // new Students
 
@@ -83,7 +82,6 @@ public class Student {
 
         this.year = year;
         id = generateID(year * 100000);
-        //System.out.println(id);
         this.major = major;
         classes = new ArrayList<>();
 
@@ -97,6 +95,7 @@ public class Student {
 
     }
 
+    /*
     public boolean addToSection(Section sec) {
 
         if (sec.getStatus().equals(Section.Status.Closed)) {
@@ -112,7 +111,7 @@ public class Student {
         classes.add(sec);
         sec.addStudent(this);
         return true;
-    }
+    } */
 
     public boolean removeFromSection(Section sec) {
 
@@ -139,17 +138,7 @@ public class Student {
 
     private void writeToFile()  {
 
-        BufferedWriter bw;
         try {
-            /*
-            bw = new BufferedWriter( new FileWriter("data/students.txt", true));
-            bw.write(this.firstName +" " + this.middleName + " " + this.lastName + "\n");
-            bw.write(this.id+"\n");
-            bw.write(this.major + "\n");
-            bw.write("TBA\n");
-            bw.newLine();
-            bw.flush();
-            bw.close(); */
             
         FileWriter fw = new FileWriter(studentsFile, true);
         PrintWriter out = new PrintWriter(fw);
@@ -186,11 +175,18 @@ public class Student {
         return id;
     }
 
-    public void setAdvisorName(String n) {
-        advisorName = n;
-    }
-
     public boolean equals (Student s) {
         return ( this.id == (s.id));
     }
+    
+    public String getAdvisorName() {
+        return advisorName;
+    }
+    
+    
+    public String getAdvisorId () {
+        return advisorId;
+    }
 }
+
+
